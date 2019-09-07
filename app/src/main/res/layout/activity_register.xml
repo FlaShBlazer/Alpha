@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sign_bg"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".RegisterActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/White">
+
+        <EditText
+            android:id="@+id/r1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Use following"
+            android:ems="10"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
+            android:textSize="22sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/White">
+
+        <EditText
+            android:id="@+id/r2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Use this"
+            android:ems="10"
+            android:hint="Full Name"
+            android:inputType="text"
+            android:textSize="22sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/White">
+
+        <EditText
+            android:id="@+id/r3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Enter Roll"
+            android:ems="10"
+            android:hint="Roll Number"
+            android:inputType="number"
+            android:textSize="22sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/White">
+
+        <EditText
+            android:id="@+id/r4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Enter Class"
+            android:ems="10"
+            android:hint="Class"
+            android:inputType="text"
+            android:textSize="22sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="@color/White">
+
+        <EditText
+            android:id="@+id/r5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Use password"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="22sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/alreadyaccount"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/Transparent"
+        android:text="Already Have Account?"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/Transparent"
+        android:text="Register"
+        android:textSize="20sp" />
+
+</LinearLayout>
