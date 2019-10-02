@@ -8,29 +8,39 @@
     android:padding="30dp"
     tools:context=".RegisterActivity">
 
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profButton"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="5dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/White">
 
         <EditText
             android:id="@+id/r1"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:autofillHints="Use following"
             android:ems="10"
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -44,14 +54,14 @@
             android:ems="10"
             android:hint="Full Name"
             android:inputType="text"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="5dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/White">
@@ -64,14 +74,14 @@
             android:ems="10"
             android:hint="Roll Number"
             android:inputType="number"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="5dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/White">
@@ -84,14 +94,14 @@
             android:ems="10"
             android:hint="Class"
             android:inputType="text"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="5dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/White">
@@ -104,7 +114,7 @@
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,9 +122,7 @@
         android:id="@+id/alreadyaccount"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/Transparent"
         android:text="Already Have Account?"
         android:textSize="20sp" />
@@ -123,9 +131,7 @@
         android:id="@+id/register"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/Transparent"
         android:text="Register"
         android:textSize="20sp" />

@@ -11,14 +11,12 @@
         android:layout_height="match_parent"
         android:background="@color/colorBack"
         android:orientation="vertical">
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/White"
             app:popupTheme="@style/AppTheme1.PopupOverlay" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,20 +29,23 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="300px"
-                    android:layout_height="300px"
-                    android:layout_marginTop="50px"
-                    android:layout_marginBottom="50px"
-                    android:src="@drawable/img3" />
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/imgProf"
+                    android:layout_width="320px"
+                    android:layout_height="320px"
+                    android:src="@drawable/img3"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/p1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="FullName"
+                    android:layout_marginLeft="8dp"
                     android:textColor="@color/colorTitle"
                     android:textSize="22sp"
+                    android:layout_marginTop="5dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -57,100 +58,119 @@
                     android:textColor="@color/colorSubTitle"
                     android:textSize="18sp"
                     android:textStyle="normal" />
-
-
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="120px"
             android:orientation="vertical"
+            android:layout_width="match_parent"
             android:paddingTop="50px">
 
             <LinearLayout
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
                     android:textColor="@color/White"
                     android:textSize="20sp"
+                    android:text="Email"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/p3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="sivugosavi1326@gmail.com"
                     android:textColor="@color/White"
-                    android:textColorHint="@color/DarkGrey"
                     android:textSize="18sp"
+                    android:hint="My Email"
+                    android:textColorHint="@color/DarkGrey"
                     android:textStyle="normal" />
 
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Roll No"
                     android:textColor="@color/White"
                     android:textSize="20sp"
+                    android:text="Roll No"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/p4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="31420"
                     android:textColor="@color/White"
-                    android:textColorHint="@color/DarkGrey"
                     android:textSize="18sp"
+                    android:hint="My Roll"
+                    android:textColorHint="@color/DarkGrey"
                     android:textStyle="normal" />
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Class"
                     android:textColor="@color/White"
                     android:textSize="20sp"
+                    android:text="Class"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/p5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TE 4"
                     android:textColor="@color/White"
-                    android:textColorHint="@color/DarkGrey"
                     android:textSize="18sp"
+                    android:hint="My Class"
+                    android:textColorHint="@color/DarkGrey"
                     android:textStyle="normal" />
-
-
             </LinearLayout>
 
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/rounded_button"
+                android:text="Save" />
+
+            <Button
+                android:id="@+id/d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+
+                android:layout_marginTop="50dp"
+                android:src="@drawable/rounded_button"
+                android:text="Delete" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

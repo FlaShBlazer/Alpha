@@ -2,6 +2,7 @@ package com.example.alpha;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -11,16 +12,18 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
+    SharedPreferences.Editor editor;
+    SharedPreferences sp, preferences;
     RelativeLayout rellay1, rellay2;
     Handler handler = new Handler();
     Runnable runnable = new Runnable() {
@@ -31,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     };
     private ProgressDialog loadingBar;
-    private FirebaseUser currentuser;
     private Button LoginButton, SignIn, ForgotPassword;
     private EditText Email, Password;
     private FirebaseAuth mAuth;
@@ -40,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sp = getSharedPreferences("login", MODE_PRIVATE);
 
         rellay1 = findViewById(R.id.rellay1);
         rellay2 = findViewById(R.id.rellay2);
@@ -47,10 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         handler.postDelayed(runnable, 1000); //1000 is delay for splash
 
         mAuth = FirebaseAuth.getInstance();
-        currentuser = mAuth.getCurrentUser();
-        if (currentuser != null) {
-            startActivity(new Intent(LoginActivity.this, Chat.class));
-        }
+
         InitializeFields();
 
         SignIn.setOnClickListener(new View.OnClickListener() {
@@ -59,20 +59,27 @@ public class LoginActivity extends AppCompatActivity {
                 SendUserToRegisterActivity();
             }
         });
+        if (sp.getBoolean("login", false)) {
+            AllowUserToLogin();
+        }
+        LoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllowUserToLogin();
+                sp.edit().putBoolean("login", true).apply();
+            }
+        });
+
         ForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, ForgotActivity.class));
             }
         });
-        LoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AllowUserToLogin();
-            }
-        });
+
 
     }
+
 
     private void AllowUserToLogin() {
         String email = Email.getText().toString();
@@ -90,9 +97,9 @@ public class LoginActivity extends AppCompatActivity {
 
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
-                public void onComplete(Task<AuthResult> task) {
+                public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        SendUserToChatActivity();
+                        SendUserToMainActivity();
                         Toast.makeText(LoginActivity.this, "Logged in successfully!!", Toast.LENGTH_SHORT).show();
                         loadingBar.dismiss();
                     } else {
@@ -115,16 +122,12 @@ public class LoginActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (currentuser != null)
-            SendUserToChatActivity();
-    }
 
-    private void SendUserToChatActivity() {
-        Intent chatIntent = new Intent(LoginActivity.this, Chat.class);
-        startActivity(chatIntent);
+    private void SendUserToMainActivity() {
+        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainIntent);
+        finish();
     }
 
     private void SendUserToRegisterActivity() {

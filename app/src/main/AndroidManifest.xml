@@ -2,22 +2,48 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alpha">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
+        android:label="Project Alpha X"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Project X"
+
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/file_provider_authorities"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <activity android:name=".SampleActivity" />
+        <activity android:name=".ProfileRequestActivity" />
         <activity android:name=".ForgotActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".UserActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Chat" />
-        <activity android:name=".Settings" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".ResultActivity" />
+        <activity android:name="com.example.alpha.UCropActivity" />
+        <activity android:name="com.yalantis.ucrop.UCropActivity" />
+
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

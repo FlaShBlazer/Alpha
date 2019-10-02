@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
 
+
     private AppCompatDelegate mDelegate;
 
     @Override

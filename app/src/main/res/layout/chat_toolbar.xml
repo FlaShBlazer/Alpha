@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:elevation="4dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/Theme.AppCompat.Light">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileIv"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img3"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--Receiver Name-->
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="His Name"
+            android:textColor="@color/White"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!--Receiver Status i.e. online or offline-->
+        <TextView
+            android:id="@+id/userStatusTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="online"
+            android:textColor="@color/White"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>

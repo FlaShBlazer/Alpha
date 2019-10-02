@@ -4,7 +4,7 @@ public class User {
 
     private String FullName;
     private String Email;
-
+    private String Image;
 
     public User() {
 
@@ -14,6 +14,12 @@ public class User {
         FullName = fullName;
         Email = email;
 
+    }
+
+    public User(String fullName, String email, String img) {
+        FullName = fullName;
+        Email = email;
+        Image = img;
     }
 
     public String getFullName() {
@@ -30,6 +36,10 @@ public class User {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    public String getImage() {
+        return Image;
     }
 
 

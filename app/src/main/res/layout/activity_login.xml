@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@drawable/grad_bg"
-    tools:context=".LoginActivity">
+    tools:context="com.example.alpha.LoginActivity">
 
     <RelativeLayout
 
